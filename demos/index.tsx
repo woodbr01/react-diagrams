@@ -59,10 +59,12 @@ storiesOf("Advanced Techniques", module)
 
 import demo_cust_nodes from "./demo-custom-node1";
 import demo_cust_links from "./demo-custom-link1";
+import demo_cust_field from "./demo-field-node";
 
 storiesOf("Custom Models", module)
 	.add("Custom diamond node", demo_cust_nodes)
-	.add("Custom animated links", demo_cust_links);
+	.add("Custom animated links", demo_cust_links)
+	.add("Custom field node", demo_cust_field);
 
 import demo_3rd_dagre from "./demo-dagre";
 

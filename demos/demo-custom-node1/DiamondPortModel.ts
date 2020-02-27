@@ -1,5 +1,8 @@
 import * as _ from "lodash";
-import { LinkModel, DiagramEngine, PortModel, DefaultLinkModel } from "storm-react-diagrams";
+import {PortModel} from "../../src/models/PortModel";
+import {DiagramEngine} from "../../src/DiagramEngine";
+import {LinkModel} from "../../src/models/LinkModel";
+import {DefaultLinkModel} from "../../src/defaults/models/DefaultLinkModel";
 
 export class DiamondPortModel extends PortModel {
 	position: string | "top" | "bottom" | "left" | "right";
