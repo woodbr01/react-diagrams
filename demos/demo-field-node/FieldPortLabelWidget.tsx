@@ -27,13 +27,13 @@ export class FieldPortLabel extends BaseWidget<FieldPortLabelProps, FieldPortLab
 
 		return (
 			<div {...this.getProps()}>
-				<select>
-					<option>one</option>
-					<option>two</option>
-					<option>three</option>
-				</select>
-				<input/>
 				{this.props.model.in ? port : label}
+				<select>
+					<option>STRING</option>
+					<option>INTEGER</option>
+					<option>DOUBLE</option>
+				</select>
+				<input placeholder={"`Size"}/>
 				{this.props.model.in ? label : port}
 			</div>
 		);

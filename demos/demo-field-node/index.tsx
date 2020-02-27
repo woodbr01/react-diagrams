@@ -32,21 +32,24 @@ export default () => {
 	var model = new DiagramModel();
 
 	//3-A) create a default node
-	var node1 = new FieldNodeModel("Node 1", "rgb(0,192,255)");
-	let port1 = node1.addOutPort("Out");
+	var node1 = new FieldNodeModel("Original", "rgb(0,192,255)");
+	let port1 = node1.addOutPort("Field1");
+	let port3 = node1.addOutPort("Field2");
 	node1.setPosition(100, 100);
 
 	//3-B) create another default node
-	var node2 = new FieldNodeModel("Node 2", "rgb(192,255,0)");
-	let port2 = node2.addInPort("In");
+	var node2 = new FieldNodeModel("Modified", "rgb(192,255,0)");
+	let port2 = node2.addInPort("Field1");
+	let port4 = node2.addInPort("Field2");
 	node2.setPosition(400, 100);
 
 	// link the ports
 	let link1 = port1.link(port2);
-	(link1 as FieldLinkModel).addLabel("Hello World!");
+	let link2 = port3.link(port4);
+	// (link1 as FieldLinkModel).addLabel("Hello World!");
 
 	//4) add the models to the root graph
-	model.addAll(node1, node2, link1);
+	model.addAll(node1, node2, link1, link2);
 
 	//5) load model into engine
 	engine.setDiagramModel(model);
